@@ -11,12 +11,16 @@ function PrivateRoute({ children }) {
     if (!keycloakInitialized) {
       keycloakInitialized = true
       
-      keycloak.init({ onLoad: 'check-sso' })
+      console.log('Initializing Keycloak...')
+      
+      keycloak.init({ onLoad: 'login-required' })
         .then((auth) => {
+          console.log('Keycloak initialized. Authenticated:', auth)
           setAuthenticated(auth)
           setLoading(false)
         })
-        .catch(() => {
+        .catch((error) => {
+          console.error('Keycloak init error:', error)
           setLoading(false)
         })
     }

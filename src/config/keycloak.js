@@ -1,7 +1,7 @@
 import Keycloak from 'keycloak-js'
 
 const keycloakConfig = {
-  url: 'https://keycloak.podprompt.local',
+  url: 'https://podprompt.local/keycloak',
   realm: 'podprompt',
   clientId: 'frontend'
 }
