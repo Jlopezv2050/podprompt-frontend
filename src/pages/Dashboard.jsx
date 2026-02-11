@@ -1,7 +1,30 @@
+import keycloak from '../config/keycloak'
+
 function Dashboard() {
+  const handleLogout = () => {
+    keycloak.logout({ redirectUri: 'https://localhost:5173' })
+  }
+
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Dashboard</h1>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <h1>Dashboard</h1>
+        <button 
+          onClick={handleLogout}
+          style={{
+            padding: '10px 20px',
+            fontSize: '16px',
+            cursor: 'pointer',
+            backgroundColor: '#dc3545',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px'
+          }}
+        >
+          Logout
+        </button>
+      </div>
+      
       <p>Welcome to your protected dashboard!</p>
       
       <div style={{ marginTop: '20px' }}>
