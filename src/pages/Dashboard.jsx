@@ -2,7 +2,10 @@ import keycloak from '../config/keycloak'
 
 function Dashboard() {
   const handleLogout = () => {
-    keycloak.logout({ redirectUri: 'https://localhost:5173' })
+  const currentOrigin = window.location.origin
+  keycloak.logout({ 
+    redirectUri: currentOrigin 
+  })
   }
 
   return (
