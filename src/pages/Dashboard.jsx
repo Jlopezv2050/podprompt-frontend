@@ -11,7 +11,7 @@ function Dashboard() {
   return (
     <div style={{ padding: '20px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h1>Dashboard</h1>
+        <h1>Dashboard v.2</h1>
         <button 
           onClick={handleLogout}
           style={{
